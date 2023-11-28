@@ -1,0 +1,32 @@
+Swap Two Nibbles of Byte
+Your given an integer N swap the two nibbles.
+Nibble are four bits of bytes 
+
+C++ Code:
+
+#include <iostream>
+using namespace std;
+
+int swapTwoNibbles(int n){
+	return ((n & 0x0F)<<4|(n & 0xF0)>>4);
+}
+
+/*
+Instead of hexadecimal value we can use binary values.
+int swapTwoNibbles(int n){
+	int right = n&0b00001111;
+	right = right<<4;
+	int left = n&0b11110000;
+	left = left>>4;
+	return left|right;
+}
+Time complexity: O(1)
+Space complexity: O(1)
+*/
+int main() {
+	// your code goes here
+	int n;
+	cin>>n;
+	cout<<swapTwoNibbles(n)<<endl;
+	return 0;
+}
